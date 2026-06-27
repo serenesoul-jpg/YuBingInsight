@@ -4,7 +4,7 @@ const apiBase = process.env.YUBING_API_BASE || 'http://localhost:3000'
 
 module.exports = {
   env: {
-    NODE_ENV: 'development',
+    NODE_ENV: '"development"',
   },
   defineConstants: {
     API_BASE: JSON.stringify(apiBase),
