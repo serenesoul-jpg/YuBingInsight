@@ -9,7 +9,7 @@
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
-│  阿里云 ECS（公网示例：8.134.97.118）                        │
+│  阿里云 ECS（公网示例：8.130.52.140）                        │
 │  ┌─────────────┐  ┌──────────────┐  ┌─────────────────────┐ │
 │  │ Docker      │  │ NestJS API   │  │ Vue Admin (可选)    │ │
 │  │ Postgres    │──│ :3000        │  │ :5173 → 代理 /api   │ │
@@ -44,7 +44,7 @@
 | 项 | 值 |
 |----|-----|
 | 实例名 | Docker-lekb |
-| 公网 IP | `8.134.97.118` |
+| 公网 IP | `8.130.52.140` |
 | 私网 IP | `172.19.40.47` |
 | 规格 | 2 vCPU / 4 GiB / 50 GiB ESSD |
 | 预装 | Docker 26.1.3 |
@@ -174,7 +174,7 @@ pnpm dev:server
 验证（在服务器或本机）：
 
 ```bash
-curl -s http://8.134.97.118:3000/api/v1/health
+curl -s http://8.130.52.140:3000/api/v1/health
 # 或服务器上：curl -s http://127.0.0.1:3000/api/v1/health
 ```
 
@@ -227,14 +227,14 @@ pnpm dev:server
 
 ```powershell
 cd <本机仓库路径>
-$env:YUBING_API_BASE="http://8.134.97.118:3000"
+$env:YUBING_API_BASE="http://8.130.52.140:3000"
 pnpm dev:mp
 ```
 
 **bash：**
 
 ```bash
-export YUBING_API_BASE=http://8.134.97.118:3000
+export YUBING_API_BASE=http://8.130.52.140:3000
 pnpm dev:mp
 ```
 
@@ -406,7 +406,7 @@ curl -sf http://127.0.0.1:3000/api/v1/health && echo "API OK"
 pgrep -af "nest start" || echo "dev:server not running"
 ```
 
-全部通过后，通知本机开发者设置 `YUBING_API_BASE=http://8.134.97.118:3000` 并运行 `pnpm dev:mp`。
+全部通过后，通知本机开发者设置 `YUBING_API_BASE=http://8.130.52.140:3000` 并运行 `pnpm dev:mp`。
 
 ---
 
