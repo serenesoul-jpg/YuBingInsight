@@ -1,0 +1,3 @@
+export default definePageConfig({
+  navigationBarTitleText: '社区助老助残',
+})

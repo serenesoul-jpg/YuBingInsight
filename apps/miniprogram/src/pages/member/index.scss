@@ -1,0 +1,100 @@
+.member-page {
+  .brand-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #0a0a0f;
+    padding: 20px 24px;
+  }
+
+  .brand-icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .profile-title {
+    font-size: 30px;
+    font-weight: 600;
+    display: block;
+  }
+
+  .profile-desc {
+    font-size: 24px;
+    color: #888888;
+    margin-top: 8px;
+    display: block;
+  }
+
+  .login-btn {
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .role-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.active {
+      color: #004ea2;
+      font-weight: 600;
+    }
+  }
+
+  .role-badge {
+    font-size: 22px;
+    color: #f5a623;
+  }
+
+  .setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .section-title {
+      margin-bottom: 0;
+    }
+  }
+
+  .link-btn {
+    background: transparent;
+    color: #004ea2;
+    font-size: 26px;
+    border: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .setting-link {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 28px;
+    color: #333333;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

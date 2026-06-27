@@ -1,0 +1,31 @@
+{
+  "miniprogramRoot": "apps/miniprogram/dist/",
+  "projectname": "yubing-insight",
+  "description": "语冰 AI 普惠 — 微信开发者工具请打开本仓库根目录",
+  "appid": "wxd3991ff4315b47e1",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "compileHotReLoad": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.4.0",
+  "srcMiniprogramRoot": "apps/miniprogram/dist/",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}

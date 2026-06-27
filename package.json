@@ -1,0 +1,45 @@
+{
+  "name": "yubing-insight",
+  "version": "0.1.0",
+  "private": true,
+  "description": "语冰 AI 普惠 — Monorepo（小程序 + 管理后台 + API）",
+  "scripts": {
+    "dev:mp": "pnpm --filter @yubing/miniprogram dev:weapp",
+    "build:mp": "pnpm --filter @yubing/miniprogram build:weapp",
+    "dev:admin": "pnpm --filter @yubing/admin dev",
+    "build:admin": "pnpm --filter @yubing/admin build",
+    "dev:server": "pnpm --filter @yubing/server start:dev",
+    "build:server": "pnpm --filter @yubing/server build",
+    "build:shared": "pnpm --filter @yubing/shared build",
+    "build": "pnpm build:shared && pnpm -r --filter '!@yubing/shared' build",
+    "docker:up": "docker compose -f docker/docker-compose.yml up -d",
+    "docker:down": "docker compose -f docker/docker-compose.yml down",
+    "db:generate": "pnpm --filter @yubing/server exec dotenv -e ../../.env -- prisma generate",
+    "db:migrate": "pnpm --filter @yubing/server exec dotenv -e ../../.env -- prisma migrate dev",
+    "db:push": "pnpm --filter @yubing/server exec dotenv -e ../../.env -- prisma db push",
+    "db:seed": "pnpm --filter @yubing/server exec dotenv -e ../../.env -- prisma db seed",
+    "db:studio": "pnpm --filter @yubing/server exec dotenv -e ../../.env -- prisma studio"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@nestjs/core",
+      "@parcel/watcher",
+      "@prisma/client",
+      "@prisma/engines",
+      "@swc/core",
+      "@tarojs/binding",
+      "core-js",
+      "core-js-pure",
+      "esbuild",
+      "prisma",
+      "swiper",
+      "vue-demi"
+    ]
+  }
+}

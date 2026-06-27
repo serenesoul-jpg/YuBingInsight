@@ -1,0 +1,73 @@
+.team-survey {
+  .page-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #004ea2;
+    display: block;
+  }
+
+  .page-desc {
+    font-size: 26px;
+    color: #666666;
+    margin: 12px 0 24px;
+    display: block;
+  }
+
+  .code-input {
+    width: 100%;
+    padding: 20px;
+    background: #f6f8fa;
+    border-radius: 8px;
+    font-size: 28px;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+  }
+
+  .verify-btn {
+    width: 100%;
+  }
+
+  .verified-banner {
+    background: #e8f4e8;
+    border: 2px solid #4caf50;
+  }
+
+  .verified-text {
+    font-size: 28px;
+    color: #2e7d32;
+    font-weight: 600;
+  }
+
+  .section-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .empty-text {
+    font-size: 26px;
+    color: #888888;
+  }
+
+  .template-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #004ea2;
+    display: block;
+  }
+
+  .template-scene {
+    font-size: 24px;
+    color: #f5a623;
+    margin-top: 8px;
+    display: block;
+  }
+
+  .template-desc {
+    font-size: 24px;
+    color: #888888;
+    margin-top: 8px;
+    display: block;
+  }
+}

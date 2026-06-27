@@ -1,0 +1,79 @@
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: 28px;
+  color: #333333;
+  background-color: #f6f8fa;
+}
+
+.container {
+  padding: 24px;
+}
+
+.brand-title {
+  color: #004ea2;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.brand-subtitle {
+  color: #666666;
+  font-size: 26px;
+  margin-top: 8px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.btn-primary {
+  background: #004ea2;
+  color: #ffffff;
+  border-radius: 12px;
+  font-size: 28px;
+  border: none;
+}
+
+.btn-accent {
+  background: #f5a623;
+  color: #ffffff;
+  border-radius: 12px;
+  font-size: 28px;
+  border: none;
+}
+
+.care-mode-root {
+  page {
+    font-size: 36px;
+    background-color: #fffdf8;
+  }
+
+  .container {
+    padding: 32px;
+  }
+
+  .brand-title {
+    font-size: 44px;
+  }
+
+  .brand-subtitle {
+    font-size: 32px;
+  }
+
+  .card {
+    padding: 32px;
+    border: 2px solid #004ea2;
+  }
+
+  .btn-primary,
+  .btn-accent {
+    font-size: 36px;
+    padding: 24px;
+    min-height: 96px;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,80 @@
+.survey-form {
+  .hint {
+    font-size: 26px;
+    color: #888888;
+  }
+
+  .form-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #004ea2;
+    display: block;
+  }
+
+  .form-desc {
+    font-size: 26px;
+    color: #666666;
+    margin-top: 12px;
+    display: block;
+    line-height: 1.6;
+  }
+
+  .question-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333333;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .required {
+    color: #f5a623;
+  }
+
+  .question-input {
+    width: 100%;
+    min-height: 120px;
+    padding: 16px;
+    background: #f6f8fa;
+    border-radius: 8px;
+    font-size: 28px;
+    box-sizing: border-box;
+  }
+
+  .option-row {
+    padding: 12px 0;
+    font-size: 28px;
+  }
+
+  .scale-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .scale-label {
+    font-size: 24px;
+    color: #666666;
+    flex-shrink: 0;
+  }
+
+  .anon-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28px;
+  }
+
+  .form-btn {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .sync-btn {
+    background: #ffffff;
+    color: #004ea2;
+    border: 2px solid #004ea2;
+    border-radius: 12px;
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,168 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  parent
+  teacher
+  elder
+  member
+  admin
+}
+
+enum MediaType {
+  article
+  video
+}
+
+enum AdminRole {
+  super_admin
+  mentor
+}
+
+model User {
+  id        String   @id @default(cuid())
+  openid    String?  @unique
+  nickname  String?
+  role      UserRole @default(parent)
+  careMode  Boolean  @default(false) @map("care_mode")
+  region    String?
+  school    String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  progress    LearningProgress[]
+  submissions SurveySubmission[]
+
+  @@map("users")
+}
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  username     String    @unique
+  passwordHash String    @map("password_hash")
+  role         AdminRole @default(mentor)
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  @@map("admin_users")
+}
+
+model Course {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  category    String
+  coverUrl    String?  @map("cover_url")
+  published   Boolean  @default(false)
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  units CourseUnit[]
+
+  @@map("courses")
+}
+
+model CourseUnit {
+  id          String   @id @default(cuid())
+  courseId    String   @map("course_id")
+  title       String
+  content     String?
+  videoUrl    String?  @map("video_url")
+  durationMin Int?     @map("duration_min")
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  course   Course             @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  progress LearningProgress[]
+
+  @@map("course_units")
+}
+
+model LearningProgress {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  unitId    String   @map("unit_id")
+  completed Boolean  @default(false)
+  progress  Int      @default(0)
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  unit CourseUnit @relation(fields: [unitId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, unitId])
+  @@map("learning_progress")
+}
+
+model SurveyTemplate {
+  id          String   @id @default(cuid())
+  title       String
+  scene       String
+  description String?
+  schema      Json
+  published   Boolean  @default(false)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  submissions SurveySubmission[]
+
+  @@map("survey_templates")
+}
+
+model SurveySubmission {
+  id         String   @id @default(cuid())
+  templateId String   @map("template_id")
+  userId     String?  @map("user_id")
+  draftId    String?  @unique @map("draft_id")
+  answers    Json
+  anonymous  Boolean  @default(true)
+  syncedAt   DateTime @default(now()) @map("synced_at")
+
+  template SurveyTemplate @relation(fields: [templateId], references: [id])
+  user     User?          @relation(fields: [userId], references: [id])
+
+  @@map("survey_submissions")
+}
+
+model Story {
+  id          String     @id @default(cuid())
+  title       String
+  summary     String?
+  coverUrl    String?    @map("cover_url")
+  content     String?
+  videoUrl    String?    @map("video_url")
+  mediaType   MediaType  @default(article) @map("media_type")
+  published   Boolean    @default(false)
+  publishedAt DateTime?  @map("published_at")
+  createdAt   DateTime   @default(now()) @map("created_at")
+  updatedAt   DateTime   @updatedAt @map("updated_at")
+
+  @@map("stories")
+}
+
+model InviteCode {
+  id        String    @id @default(cuid())
+  code      String    @unique
+  role      UserRole  @default(member)
+  maxUses   Int?      @map("max_uses")
+  usedCount Int       @default(0) @map("used_count")
+  expiresAt DateTime? @map("expires_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  @@map("invite_codes")
+}
+
+model SiteStat {
+  id    String @id @default(cuid())
+  key   String @unique
+  value Int    @default(0)
+
+  @@map("site_stats")
+}
