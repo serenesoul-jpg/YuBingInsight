@@ -1,0 +1,99 @@
+.impact-page {
+  .hero {
+    background: linear-gradient(135deg, #004ea2, #0066cc);
+    color: #ffffff;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    font-weight: 600;
+    display: block;
+  }
+
+  .hero-desc {
+    font-size: 26px;
+    margin-top: 8px;
+    opacity: 0.9;
+    display: block;
+  }
+
+  .section-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .stat-item {
+    width: calc(50% - 8px);
+    text-align: center;
+    padding: 16px 0;
+    background: #f6f8fa;
+    border-radius: 12px;
+  }
+
+  .stat-value {
+    font-size: 32px;
+    font-weight: 600;
+    color: #004ea2;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 22px;
+    color: #888888;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .scene-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .scene-name {
+    font-size: 28px;
+    font-weight: 500;
+    color: #004ea2;
+    display: block;
+  }
+
+  .scene-desc {
+    font-size: 24px;
+    color: #888888;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .story-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .story-title {
+    font-size: 28px;
+    font-weight: 500;
+    display: block;
+  }
+
+  .story-summary {
+    font-size: 24px;
+    color: #888888;
+    margin-top: 4px;
+    display: block;
+  }
+}

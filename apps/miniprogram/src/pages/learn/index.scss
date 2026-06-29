@@ -1,44 +1,82 @@
-.learn-page {
+.learn-hub {
   .page-title {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 600;
-    color: #333333;
+    color: #004ea2;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .page-desc {
+    font-size: 26px;
+    color: #666666;
     margin-bottom: 24px;
     display: block;
   }
 
-  .hint {
+  .continue-bar {
+    border-left: 6px solid #f5a623;
+    margin-bottom: 24px;
+  }
+
+  .continue-text {
+    font-size: 28px;
+    color: #333333;
+  }
+
+  .module-card {
+    position: relative;
+  }
+
+  .module-emoji {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .module-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333333;
+    display: block;
+  }
+
+  .module-sub {
     font-size: 26px;
     color: #888888;
+    margin-top: 8px;
     display: block;
-    margin-bottom: 16px;
   }
 
-  .course-name {
-    font-size: 28px;
-    font-weight: 500;
+  .module-go {
+    font-size: 26px;
     color: #004ea2;
+    margin-top: 16px;
     display: block;
   }
 
-  .course-tag {
-    font-size: 22px;
-    color: #f5a623;
-    margin-top: 8px;
-    display: block;
+  .path-banner {
+    background: linear-gradient(135deg, #004ea2 0%, #0066cc 100%);
+    color: #ffffff;
   }
 
-  .course-desc {
+  .path-label {
     font-size: 24px;
-    color: #888888;
+    opacity: 0.85;
+    display: block;
+  }
+
+  .path-title {
+    font-size: 32px;
+    font-weight: 600;
     margin-top: 8px;
     display: block;
   }
 
-  .course-meta {
-    font-size: 22px;
-    color: #666666;
+  .path-meta {
+    font-size: 24px;
     margin-top: 8px;
+    opacity: 0.9;
     display: block;
   }
 }

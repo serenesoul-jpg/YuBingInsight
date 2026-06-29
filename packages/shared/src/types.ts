@@ -37,6 +37,7 @@ export interface CourseDto {
   title: string
   description: string | null
   category: string
+  module?: string | null
   coverUrl: string | null
   published: boolean
   units?: CourseUnitDto[]

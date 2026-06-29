@@ -13,11 +13,26 @@ export class RequestError extends Error {
 
 type RequestOptions = Taro.request.Option & { skipAuth?: boolean }
 
+function resolveApiBase(): string {
+  let base = (API_BASE || '').replace(/\/$/, '')
+  if (process.env.TARO_ENV === 'h5' && typeof window !== 'undefined') {
+    const host = window.location.hostname
+    if (
+      (base.includes('localhost') || base.includes('127.0.0.1')) &&
+      host !== 'localhost' &&
+      host !== '127.0.0.1'
+    ) {
+      base = `${window.location.protocol}//${host}:3000`
+    }
+  }
+  return base
+}
+
 function buildUrl(path: string): string {
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path
   }
-  const base = (API_BASE || '').replace(/\/$/, '')
+  const base = resolveApiBase()
   const normalized = path.startsWith('/') ? path : `/${path}`
   return `${base}${normalized}`
 }

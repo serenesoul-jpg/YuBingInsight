@@ -104,14 +104,14 @@ async function main() {
       ],
     },
     {
-      title: '语冰机器人：情景互动课堂',
-      description: '语冰机器人情景教案与课堂脚本示例。',
+      title: '冰块机器人：情景互动课堂',
+      description: '冰块机器人教具情景教案与课堂脚本示例。',
       category: 'robot',
       sortOrder: 2,
       units: [
         {
           title: '机器人初相识',
-          content: '介绍语冰机器人功能与安全使用规范。',
+          content: '介绍冰块机器人功能与安全使用规范。',
           durationMin: 5,
           sortOrder: 1,
         },

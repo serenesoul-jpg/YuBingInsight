@@ -5,6 +5,8 @@
   "description": "语冰 AI 普惠 — Monorepo（小程序 + 管理后台 + API）",
   "scripts": {
     "dev:mp": "pnpm --filter @yubing/miniprogram dev:weapp",
+    "dev:mp:h5": "pnpm --filter @yubing/miniprogram dev:h5",
+    "preview:mp:h5": "pnpm --filter @yubing/miniprogram build:h5 && npx serve apps/miniprogram/dist -l tcp://0.0.0.0:10086 --cors --no-port-switching",
     "build:mp": "pnpm --filter @yubing/miniprogram build:weapp",
     "dev:admin": "pnpm --filter @yubing/admin dev",
     "build:admin": "pnpm --filter @yubing/admin build",

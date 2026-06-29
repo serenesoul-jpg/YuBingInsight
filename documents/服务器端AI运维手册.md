@@ -99,6 +99,7 @@ YuBingInsight/                 # 仓库根（pnpm workspace）
 | 22 | SSH | 开发者 IP 或办公网 |
 | 3000 | NestJS API | 开发者 IP（微信联调） |
 | 5173 | Admin 开发服（可选） | 开发者 IP |
+| 10086 | Taro H5 预览（Web 优先开发，见 PRD v2.2 §5） | 开发者 IP |
 
 **不要**公网开放 5432、6380。
 
@@ -180,7 +181,19 @@ curl -s http://8.130.52.140:3000/api/v1/health
 
 Swagger：`http://<公网IP>:3000/api/docs`
 
-### 6.5（可选）启动管理后台
+### 6.5（可选）H5 浏览器预览（v2.2 Web 优先开发）
+
+在服务器上（**不要**在服务器跑 `pnpm dev:mp` weapp）：
+
+```bash
+pnpm dev:server    # 终端 1：API :3000
+pnpm dev:mp:h5     # 终端 2：H5  :10086
+```
+
+浏览器访问：`http://<公网IP>:10086`  
+与小程序共用 `apps/miniprogram/src`；改代码后 H5 热更新。本机仅 `git pull` + `pnpm dev:mp` 做微信开发者工具最终验收。
+
+### 6.6（可选）启动管理后台
 
 ```bash
 pnpm dev:admin
@@ -254,6 +267,7 @@ pnpm dev:mp
 | `pnpm docker:down` | 停止容器（不加 `-v` 不删数据卷） |
 | `pnpm dev:server` | NestJS 开发模式 watch，端口 3000 |
 | `pnpm dev:admin` | Vue Admin 开发服，端口 5173 |
+| `pnpm dev:mp:h5` | Taro H5 浏览器预览（同小程序源码），端口 **10086** |
 | `pnpm build:server` | 编译 API → `packages/server/dist` |
 | `pnpm db:generate` | Prisma Client 生成 |
 | `pnpm db:push` |  schema 同步到数据库（无迁移文件时） |

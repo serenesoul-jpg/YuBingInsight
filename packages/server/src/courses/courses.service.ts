@@ -1,4 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { categoriesForModule, moduleForCategory } from '@yubing/shared';
 import { PrismaService } from '../prisma/prisma.service';
 import {
   CreateCourseDto,
@@ -11,11 +12,22 @@ import {
 export class CoursesService {
   constructor(private prisma: PrismaService) {}
 
-  async listPublished(category?: string) {
+  async listPublished(category?: string, module?: string) {
+    let categoryFilter: string | { in: string[] } | undefined = category
+      ? category
+      : undefined;
+    if (module) {
+      const cats = categoriesForModule(module as 'ice-robot' | 'college-ai');
+      if (cats.length) categoryFilter = { in: cats };
+    }
     const courses = await this.prisma.course.findMany({
       where: {
         published: true,
-        ...(category ? { category } : {}),
+        ...(categoryFilter
+          ? typeof categoryFilter === 'string'
+            ? { category: categoryFilter }
+            : { category: categoryFilter }
+          : {}),
       },
       orderBy: { sortOrder: 'asc' },
       include: { units: { orderBy: { sortOrder: 'asc' } } },
@@ -25,6 +37,7 @@ export class CoursesService {
       title: c.title,
       description: c.description,
       category: c.category,
+      module: moduleForCategory(c.category) ?? null,
       coverUrl: c.coverUrl,
       published: c.published,
       unitCount: c.units.length,
@@ -54,6 +67,7 @@ export class CoursesService {
       title: course.title,
       description: course.description,
       category: course.category,
+      module: moduleForCategory(course.category) ?? null,
       coverUrl: course.coverUrl,
       published: course.published,
       units: course.units.map((u) => ({

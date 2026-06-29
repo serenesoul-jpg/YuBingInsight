@@ -1,0 +1,40 @@
+.community-detail {
+  .topic {
+    font-size: 24px;
+    color: #004ea2;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .title {
+    font-size: 34px;
+    font-weight: 600;
+    color: #333333;
+    display: block;
+  }
+
+  .meta {
+    font-size: 24px;
+    color: #888888;
+    margin: 12px 0 24px;
+    display: block;
+  }
+
+  .body {
+    font-size: 28px;
+    color: #333333;
+    line-height: 1.6;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .placeholder {
+    color: #888888;
+    font-size: 24px;
+  }
+
+  .hint {
+    font-size: 26px;
+    color: #888888;
+  }
+}

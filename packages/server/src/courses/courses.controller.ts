@@ -21,8 +21,8 @@ export class CoursesController {
 
   @Public()
   @Get()
-  list(@Query('category') category?: string) {
-    return this.coursesService.listPublished(category);
+  list(@Query('category') category?: string, @Query('module') module?: string) {
+    return this.coursesService.listPublished(category, module);
   }
 
   @OptionalAuth()

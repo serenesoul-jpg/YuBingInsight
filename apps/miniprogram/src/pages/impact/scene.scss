@@ -1,0 +1,46 @@
+.scene-page {
+  .hero-card {
+    background: linear-gradient(135deg, #004ea2 0%, #0066cc 100%);
+
+    .scene-title,
+    .scene-desc {
+      color: #ffffff;
+    }
+  }
+
+  .scene-title {
+    font-size: 32px;
+    font-weight: 600;
+    display: block;
+  }
+
+  .scene-desc {
+    font-size: 26px;
+    margin-top: 12px;
+    line-height: 1.6;
+    display: block;
+  }
+
+  .section-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .feature-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 28px;
+    color: #333333;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .action-btn {
+    margin-top: 16px;
+    width: 100%;
+  }
+}

@@ -11,6 +11,8 @@ export const API_ROUTES = {
     updateCareMode: `${API_PREFIX}/auth/care-mode`,
   },
   courses: `${API_PREFIX}/courses`,
+  learningPaths: `${API_PREFIX}/learning-paths`,
+  learningPathDetail: (id: string) => `${API_PREFIX}/learning-paths/${id}`,
   courseDetail: (id: string) => `${API_PREFIX}/courses/${id}`,
   courseProgress: (id: string) => `${API_PREFIX}/courses/${id}/progress`,
   unitProgress: (unitId: string) => `${API_PREFIX}/courses/units/${unitId}/progress`,

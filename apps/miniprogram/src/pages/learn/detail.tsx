@@ -3,6 +3,7 @@ import { View, Text, Video } from '@tarojs/components'
 import Taro, { useRouter } from '@tarojs/taro'
 import { API_ROUTES, type CourseDto } from '@yubing/shared'
 import { get } from '../../services/request'
+import { setContinueLearning } from '../../utils/learning-storage'
 import './detail.scss'
 
 export default function LearnDetail() {
@@ -14,7 +15,14 @@ export default function LearnDetail() {
   useEffect(() => {
     if (!courseId) return
     get<CourseDto>(API_ROUTES.courseDetail(courseId))
-      .then(setCourse)
+      .then((data) => {
+        setCourse(data)
+        setContinueLearning({
+          label: data.title,
+          url: `/pages/learn/detail?id=${data.id}`,
+          module: data.module ?? undefined,
+        })
+      })
       .catch(() => {
         Taro.showToast({ title: '课程加载失败', icon: 'none' })
       })

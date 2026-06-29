@@ -28,6 +28,95 @@
     display: block;
   }
 
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .section-more {
+    font-size: 24px;
+    color: #004ea2;
+  }
+
+  .continue-card {
+    border-left: 6px solid #004ea2;
+  }
+
+  .continue-label {
+    font-size: 28px;
+    color: #333333;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .continue-action {
+    font-size: 26px;
+    color: #004ea2;
+    font-weight: 500;
+  }
+
+  .module-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .module-chip {
+    flex: 1;
+    min-width: 280px;
+    background: #f0f6ff;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .module-emoji {
+    font-size: 36px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .module-name {
+    font-size: 26px;
+    font-weight: 500;
+    color: #004ea2;
+  }
+
+  .link-row {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .link-text {
+    font-size: 26px;
+    color: #666666;
+  }
+
+  .feed-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .feed-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333333;
+    display: block;
+  }
+
+  .feed-excerpt {
+    font-size: 24px;
+    color: #888888;
+    margin-top: 4px;
+    display: block;
+  }
+
   .stats-grid {
     display: flex;
     flex-wrap: wrap;
@@ -51,29 +140,6 @@
 
   .stat-label {
     font-size: 22px;
-    color: #888888;
-    margin-top: 4px;
-    display: block;
-  }
-
-  .scene-item {
-    padding: 16px 0;
-    border-bottom: 1px solid #f0f0f0;
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
-  .scene-name {
-    font-size: 28px;
-    font-weight: 500;
-    color: #004ea2;
-    display: block;
-  }
-
-  .scene-desc {
-    font-size: 24px;
     color: #888888;
     margin-top: 4px;
     display: block;

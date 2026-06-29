@@ -10,6 +10,7 @@ import { StoriesModule } from './stories/stories.module';
 import { StatsModule } from './stats/stats.module';
 import { TeamModule } from './team/team.module';
 import { AdminModule } from './admin/admin.module';
+import { LearningPathsModule } from './learning-paths/learning-paths.module';
 import { JwtAuthGuard } from './common/guards/jwt-auth.guard';
 import { RolesGuard } from './common/guards/roles.guard';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
@@ -29,6 +30,7 @@ import { AllExceptionsFilter } from './common/filters/http-exception.filter';
     StatsModule,
     TeamModule,
     AdminModule,
+    LearningPathsModule,
   ],
   controllers: [HealthController],
   providers: [

@@ -116,6 +116,28 @@ export default function Member() {
       </View>
 
       <View className="card">
+        <Text className="section-title">学习档案</Text>
+        <View
+          className="setting-link"
+          onClick={() => Taro.navigateTo({ url: '/pages/learn/ice-robot/index' })}
+        >
+          <Text>冰块机器人课程</Text>
+        </View>
+        <View
+          className="setting-link"
+          onClick={() => Taro.navigateTo({ url: '/pages/learn/college-ai/index' })}
+        >
+          <Text>大学生 AI 路径</Text>
+        </View>
+        <View
+          className="setting-link"
+          onClick={() => Taro.navigateTo({ url: '/pages/impact/index' })}
+        >
+          <Text>实践成果馆</Text>
+        </View>
+      </View>
+
+      <View className="card">
         <Text className="section-title">可选角色</Text>
         {SELECTABLE_ROLES.map((role) => (
           <View
