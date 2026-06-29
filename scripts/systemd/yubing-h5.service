@@ -1,0 +1,20 @@
+[Unit]
+Description=YuBing Insight Taro H5 preview (:10086)
+After=yubing-api.service network-online.target
+Wants=yubing-api.service network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/workspace/YuBingInsight
+Environment=NODE_OPTIONS=--max-old-space-size=2048
+Environment=PATH=/root/.nvm/versions/node/v20.20.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/root/.nvm/versions/node/v20.20.2/bin/pnpm dev:mp:h5
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=yubing-h5
+
+[Install]
+WantedBy=multi-user.target

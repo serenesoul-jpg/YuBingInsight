@@ -1,0 +1,21 @@
+[Unit]
+Description=YuBing Insight NestJS API (:3000)
+After=docker.service network-online.target
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/workspace/YuBingInsight
+Environment=NODE_OPTIONS=--max-old-space-size=2048
+Environment=PATH=/root/.nvm/versions/node/v20.20.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/root/.nvm/versions/node/v20.20.2/bin/pnpm dev:server
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=yubing-api
+
+[Install]
+WantedBy=multi-user.target
